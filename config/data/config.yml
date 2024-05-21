@@ -1,0 +1,53 @@
+#获取首页便签列表
+GetNotesApi:
+  path: '/v3/notesvr/user/{userid}/home/startindex/{startindex}/rows/{rows}/notes'
+  mustKeys:
+    - userid
+    - startindex
+    - rows
+  headers_mustKeys:
+    - Cookie
+  body base: {}
+  expect base: {}
+#上传更新便签主题
+UpDateNotesBodyApi:
+  path: '/v3/notesvr/set/noteinfo'
+  mustKeys:
+    - noteId
+  headers_mustKeys:
+    - Cookie
+    - X-user-key
+  body base: {}
+  expect base: {}
+#上传更新便签内容
+UpDateNotesInfoApi:
+  path: '/v3/notesvr/set/notecontent'
+  mustKeys:
+    - noteId
+#    - title 这两个好像不是必须参数，不传也能成功
+#    - summary 这两个好像不是必须参数，不传也能成功
+    - body
+    - localContentVersion
+    - BodyType
+  headers_mustKeys:
+    - Cookie
+    - X-user-key
+  body base:
+    noteId: None
+    title: 'czc_test'
+    summary: 'czc_test'
+    body: 'czc_test'
+    localContentVersion: None
+    BodyType: 0
+  expect base: { }
+#获取便签内容
+GetNotesInfoApi:
+  path: '/v3/notesvr/get/notebody'
+  mustKeys:
+    - noteIds
+  headers_mustKeys:
+    - Cookie
+    - X-user-key
+  body base:
+    noteIds: None
+  expect base: { }
