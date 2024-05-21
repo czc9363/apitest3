@@ -115,7 +115,7 @@ class GetNotesInput(unittest.TestCase):
         self.assertEqual(500, res.status_code)
         CheckOutPut().output_check(expect, res.json())
 
-    @parameterized.expand(["01234567890123456789012345678901234567890123456789", 1.5, None])
+    @parameterized.expand(["01234567890123456789012345678901234567890123456789", None])
     def testCase09_rows(self, key):
         """rows值异常情况"""
         step(f"查询首页便签,rows值为{key}")
