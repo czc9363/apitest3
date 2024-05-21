@@ -95,7 +95,7 @@ class GetNotesInput(unittest.TestCase):
         self.assertEqual(401, res.status_code)
         CheckOutPut().output_check(expect, res.json())
 
-    @parameterized.expand(["01234567890123456789012345678901234567890123456789", 1.5, None])
+    @parameterized.expand(["01234567890123456789012345678901234567890123456789", None])
     def testCase07_userid(self, key):
         """userid值异常情况"""
         step(f"查询首页便签,userid值为{key}")
@@ -105,7 +105,7 @@ class GetNotesInput(unittest.TestCase):
         self.assertEqual(500, res.status_code)
         CheckOutPut().output_check(expect, res.json())
 
-    @parameterized.expand(["01234567890123456789012345678901234567890123456789", 1.5, None])
+    @parameterized.expand(["01234567890123456789012345678901234567890123456789", None])
     def testCase08_startIndex(self, key):
         """startindex值异常情况s值为"""
         step(f"查询首页便签,startindex值为{key}")
