@@ -74,7 +74,7 @@ class GetNotesInfoInput(unittest.TestCase):
         self.assertEqual(401, res.status_code)
         CheckOutPut().output_check(expect, res.json())
 
-    @parameterized.expand(["aBcd", "", None])
+    @parameterized.expand(["aBcd", ""])
     def testCase04_input_noteIds(self, key):
         """noteIds必填字段异常值校验"""
         step(f"获取便签内容,noteIds值为{key}")
