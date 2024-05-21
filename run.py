@@ -16,7 +16,7 @@ if __name__ == '__main__':
         pattern = 'test_major*.py'
     else:
         run_pattern = run_pattern + '.py'
-    str_time = datetime.now().strftime("%Y%m%d_%H%M%S")
+    # str_time = datetime.now().strftime("%Y%m%d_%H%M%S")
     suite = unittest.TestLoader().discover('./testCase', 'test*.py')
     result = BeautifulReport(suite)
-    result.report(filename=f"report_{run_pattern}_{str_time}.html", description="report", report_dir='./')
+    result.report(filename="report.html", description="测试报告", report_dir='./')
