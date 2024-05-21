@@ -4,7 +4,7 @@ from datetime import datetime
 from BeautifulReport import BeautifulReport
 
 DIR = os.path.dirname(os.path.abspath(__file__))
-Environ = 'offline'
+Environ = 'offline_data'
 
 
 if __name__ == '__main__':
